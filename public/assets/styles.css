@@ -1,0 +1,8 @@
+body {
+  font-family: helvetica, verdana, arial, sans-serif;
+  padding: 1rem;
+}
+
+a, a:visited {
+  color: #3366dd;
+}
