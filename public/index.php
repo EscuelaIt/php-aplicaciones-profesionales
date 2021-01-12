@@ -1,53 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spaghetti</title>
-  <link rel="stylesheet" href="/assets/styles.css">
-</head>
-<body>
-  <h1>Spaghetti PHP!!!</h1>
-
-  <?php
+<?php
 
   require '../vendor/autoload.php';
 
-  use Carbon\Carbon;
-  use Lib\Breadcrumbs;
-  use Lib\Dates;
-  use League\Plates\Engine;
+  $router = new AltoRouter();
 
-  $templates = new Engine('../views');
+  $router->map( 'GET', '/', 'FrontController#home', 'home' );
+  $router->map( 'GET', '/otra/carpeta', 'FrontController#otraCarpeta' );
+  $router->map( 'GET', '/producto/[i:id]', 'FrontController#producto' );
+  
+  $match = $router->match();
 
-  $date = Carbon::now();
-  echo $date->format('Y');
+  if ($match === false) {
+      open404Error();
+  } else {
+      callController($match);
+  }
 
-  Carbon::setLocale('es');
-  $today = Carbon::now();
-  $tomorrow = $today->addDays(1);
-  echo $tomorrow->isoFormat('dddd DD [de] MMMM'); 
+  function open404Error() {
+    header( $_SERVER["SERVER_PROTOCOL"] . ' 404 Not Found');
+    $controllerObject = new App\Controllers\FrontController;
+    $controllerObject->error404();
+  }
 
-  // include '../Lib/Dates.php';
-  // include '../Lib/Breadcrumbs.php';
+  function callController($match) {
+    list( $controller, $action ) = explode( '#', $match['target'] );
+      $controller = 'App\\Controllers\\' . $controller;
+      if ( method_exists($controller, $action)) {
+          $controllerObject = new $controller;
+          call_user_func_array(array($controllerObject,$action), $match['params']);
+      } else {
+          open404Error();
+      }
+  }
 
-  $crumbs = new Breadcrumbs();
-  $crumbs->add('/link', 'Sección');
-  $crumbs->show();
-  ?>
-
-  <p>
-    Con PHP es fácil hacer Spaghetti Code y mezclar la presentación, el HTML con código PHP, lo que produce diversos problemas, afectando seriamente a la mantenibilidad de los proyectos.
-  </p>
-  <p>
-    Pero en 
-    <?= Dates::longDate(Dates::tomorrow()) ?> 
-    lo vamos a solucionar.
-  </p>
-
-  <?= $templates->render('template-test', [
-    'subtitle' => 'Bienvenidos a EscuelaIT',
-  ]); ?>
-
-</body>
-</html>

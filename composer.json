@@ -1,11 +1,13 @@
 {
     "autoload": {
         "psr-4": {
-            "Lib\\": "Lib/"
+            "Lib\\": "Lib/",
+            "App\\": "App/"
         }
     },
     "require": {
         "nesbot/carbon": "^2.43",
-        "league/plates": "^3.4"
+        "league/plates": "^3.4",
+        "altorouter/altorouter": "^2.0"
     }
 }
