@@ -3,6 +3,32 @@ body {
   padding: 1rem;
 }
 
-a, a:visited {
+a, a:visited {
   color: #3366dd;
+}
+
+header {
+  background-color: #f0f0f0;
+  margin-bottom: 1.5rem;
+  padding: 0.2rem 1rem;
+}
+header img {
+  width: 150px;
+}
+
+footer {
+  color: #fff;
+  background-color: #303030;
+  text-align: center;
+  padding: 0.7rem;
+  margin-top: 1.5rem;
+}
+footer a {
+  color: #fff;
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-top: 0.3rem;
 }
