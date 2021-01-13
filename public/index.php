@@ -12,6 +12,11 @@
   $router->map( 'GET', '/', 'FrontController#home', 'home' );
   $router->map( 'GET', '/otra/carpeta', 'FrontController#otraCarpeta' );
   $router->map( 'GET', '/producto/[i:id]', 'FrontController#producto' );
+  $router->map( 'GET', '/manuales/[*:slug]/editar', 'ManualController#edit' );
+  $router->map( 'POST', '/manuales/[*:slug]/editar', 'ManualController#edit' );
+  $router->map( 'GET', '/manuales/[*:slug]', 'ManualController#single' );
+  $router->map( 'POST', '/manuales/buscar', 'ManualController#search' );
+
   
   $match = $router->match();
 

@@ -1,6 +1,6 @@
 body {
   font-family: helvetica, verdana, arial, sans-serif;
-  padding: 1rem;
+  margin: 1rem;
 }
 
 a, a:visited {
@@ -16,6 +16,10 @@ header img {
   width: 150px;
 }
 
+main {
+  padding: 0 1rem;
+}
+
 footer {
   color: #fff;
   background-color: #303030;
@@ -23,7 +27,7 @@ footer {
   padding: 0.7rem;
   margin-top: 1.5rem;
 }
-footer a {
+footer a, footer a:visited {
   color: #fff;
 }
 
@@ -31,4 +35,27 @@ h1 {
   font-size: 1.5rem;
   font-weight: 300;
   margin-top: 0.3rem;
+}
+
+.manual {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  margin-bottom: 1.5rem;
+}
+
+.errors, .success {
+  background-color: #fcc;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+.errors ul {
+  margin-bottom: 0;
+}
+
+.success {
+  background-color: #cfc;
 }
