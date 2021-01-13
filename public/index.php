@@ -2,6 +2,11 @@
 
   require '../vendor/autoload.php';
 
+  use Dotenv\Dotenv;
+
+  $dotenv = Dotenv::createImmutable('../');
+  $dotenv->load();
+
   $router = new AltoRouter();
 
   $router->map( 'GET', '/', 'FrontController#home', 'home' );
