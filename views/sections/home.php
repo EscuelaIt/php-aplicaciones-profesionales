@@ -6,14 +6,14 @@
 
 <?= $this->insert('partials/search-form') ?>
 
+<p>
+  <a href="/manuales/nuevo">Crear un manual</a>
+</p>
+
 <?php foreach($manuals as $manual): ?>
-  <div class="manual">
-    <h2><?= $manual['title'] ?></h2>
-    <p>
-      <?= $manual['excerpt'] ?>
-      <a href="/manuales/<?= $manual['slug'] ?>">Acceder</a>
-    </p>
-  </div>
+  <?= $this->insert('partials/manual-card', [
+      "manual" => $manual,
+  ]) ?>
 <?php endforeach ?>
 
 <?php $this->start('footerLinks') ?>

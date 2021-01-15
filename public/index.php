@@ -12,6 +12,8 @@
   $router->map( 'GET', '/', 'FrontController#home', 'home' );
   $router->map( 'GET', '/otra/carpeta', 'FrontController#otraCarpeta' );
   $router->map( 'GET', '/producto/[i:id]', 'FrontController#producto' );
+  $router->map( 'GET', '/manuales/nuevo', 'ManualController#insert' );
+  $router->map( 'POST', '/manuales/nuevo', 'ManualController#save' );
   $router->map( 'GET', '/manuales/[*:slug]/editar', 'ManualController#edit' );
   $router->map( 'POST', '/manuales/[*:slug]/editar', 'ManualController#edit' );
   $router->map( 'GET', '/manuales/[*:slug]', 'ManualController#single' );

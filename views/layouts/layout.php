@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <img src="/assets/images/logo.svg" alt="Logo">
+    <a href="/"><img src="/assets/images/logo.svg" alt="Logo"></a>
   </header>
 
   <main>
