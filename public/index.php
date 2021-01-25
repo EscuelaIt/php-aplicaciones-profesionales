@@ -7,6 +7,10 @@
   $dotenv = Dotenv::createImmutable('../');
   $dotenv->load();
 
+  echo $_ENV["DB_USER"];
+  echo $_ENV["DB_PASSWORD"];
+  exit;
+
   $router = new AltoRouter();
 
   $router->map( 'GET', '/', 'FrontController#home', 'home' );
