@@ -20,7 +20,8 @@
   <p>
     <a href="/otra/carpeta">Otra ruta</a> |
     <a href="/producto/1">Producto 1</a> |
-    <a href="/producto/1">Producto 22</a>
+    <a href="/producto/22">Producto 22</a>
+    <a href="/producto/133">Producto 133</a>
   </p>
 <?php $this->stop() ?>
 
