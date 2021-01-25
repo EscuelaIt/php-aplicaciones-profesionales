@@ -7,6 +7,7 @@
   $dotenv = Dotenv::createImmutable('../');
   $dotenv->load();
 
+  echo '---';
   echo $_ENV["DB_USER"];
   echo $_ENV["DB_PASSWORD"];
   exit;
