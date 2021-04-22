@@ -15,7 +15,7 @@
     <?= $this->section('content') ?>
   </main>
   <footer>
-    © Copyright... EscuelaIT
+    © Copyright 2021... EscuelaIT
     <?= $this->section('footerLinks') ?>
   </footer>
 
